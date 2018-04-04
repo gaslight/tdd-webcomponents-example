@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/menu.spec.js',
+  entry: './src/hello-world.spec.js',
   mode: 'development',
   output: {
     filename: 'tests.js',
