@@ -20,6 +20,19 @@ describe("basic test", () => {
     expect(helloWorld.textContent).to.equal("Hello, world!");
   })
 
+  it('can intercept requests', (done) => {
+    window.addMockResponse("localhost", {
+      status: 200,
+      body: "this is mocked"
+    });
+    fetch('http://localhost:3000/foo')
+      .then((response) => response.text())
+      .then((text) => {
+        expect(text).to.equal("this is mocked");
+      })
+      .then(done());
+
+  });
   afterEach(() => {
     document.body.removeChild(sandbox);
   });

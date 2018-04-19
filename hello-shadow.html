@@ -1,0 +1,17 @@
+<html>
+<head>
+  <style>
+    h1 {
+      color: red;
+    }
+  </style>
+  <script type="module">
+    import HelloShadow from './src/hello-shadow.js';
+    customElements.define('hello-shadow', HelloShadow)
+  </script>
+</head>
+<body>
+  <h1 class="shadow">Got no shadow but red</h1>
+  <hello-shadow></hello-shadow>
+</body>
+</html>
